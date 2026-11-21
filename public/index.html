@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+
+    <meta charset="utf-8">
+	<title>Superfight</title>
+    <link rel="stylesheet" type="text/css" href="style.css" charset="utf-8"/>
+    <link rel="icon" href="assets/favicon.ico"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="data.js" defer></script>
+    <script src="functions.js" defer></script>
+</head>
+<body>
+    <template id="card-f-attr-template">
+        <article class="card black">
+            <div>
+                <h1>Attribute</h1>
+                <p>---</p>
+            </div>
+            <div class="controls">
+                <button onclick="refreshCard(this,'f-attr')">refresh</button>
+                <button onclick="deleteCard(this)">delete</button>
+            </div>
+        </article>
+    </template>
+    <template id="card-a-attr-template">
+        <article class="card black">
+            <div>
+                <h1>Attribute</h1>
+                <p>---</p>
+            </div>
+            <div class="controls">
+                <button onclick="refreshCard(this,'a-attr')">refresh</button>
+                <button onclick="deleteCard(this)">delete</button>
+            </div>
+        </article>
+    </template>
+    <header>
+        <span class="title-icon" style="margin-top: 0.1em;">electric_bolt</span>
+        <strong>Superfight</strong>
+    </header>
+    <hr>
+    <section style="gap: 1em;">
+        <fieldset>
+            <legend>Fighter #1</legend>
+            <div class="card-list">
+                <article class="card white">
+                    <div>
+                        <h1>Fighter</h1>
+                        <p>The Green Goblin</p>
+                    </div>
+                    <div class="controls">
+                        <button onclick="refreshCard(this,'fighter')">refresh</button>
+                    </div>
+                </article>
+            </div>
+            <button onclick="addCard(this,'f-attr')">add</button>
+        </fieldset>
+        <fieldset>
+            <legend>Fighter #2</legend>
+            <div class="card-list">
+                <article class="card white">
+                    <div>
+                        <h1>Fighter</h1>
+                        <p>The Green Goblin</p>
+                    </div>
+                    <div class="controls">
+                        <button onclick="refreshCard(this,'fighter')">refresh</button>
+                    </div>
+                </article>
+            </div>
+            <button onclick="addCard(this,'f-attr')">add</button>
+        </fieldset>
+    </section>
+    <section style='display: none;'>
+        <fieldset>
+            <legend>Arena</legend>
+            <div class="card-list">
+                <article class="card white">
+                    <div>
+                        <h1>Arena</h1>
+                        <p>Hell</p>
+                    </div>
+                    <div class="controls">
+                        <button onclick="refreshCard(this,'arena')">refresh</button>
+                    </div>
+                </article>
+            </div>
+            <button onclick="addCard(this,'a-attr')">add</button>
+        </fieldset>
+    </section>
+    <hr>
+    <section style="image-rendering: pixelated; justify-content: start; gap: 0.5em">
+        <a href="https://tomatoradio.github.io/profile" target="_blank">
+            <img src="assets/tomatoradio.png" width="176" height="30" alt="Broadcast to you by TomatoRadio">
+        </a>
+        <a href="https://github.com/TomatoRadio/superfight" target="_blank">
+            <img src="assets/github.png" width="176" height="30" alt="View Source on Github">
+        </a>
+        <p>Superfight™ by <a href="https://www.skybound.com/" target="_blank">Skybound Games</a>. This page has no endorsement or approval for running from the Trademark holders of Superfight.</p>
+    </section>
+    <section style="align-items: start; display: none;">
+        <details id="fighter">
+            <summary>All Fighters</summary>
+            <p>The Green Goblin</p>
+            <p>Weird Al</p>
+            <p>You</p>
+            <p>A Gorilla</p>
+            <p>A Pig</p>
+            <p>A Sea Urchin</p>
+            <p>The President of the US</p>
+            <p>A Witch</p>
+            <p>A Rabbit</p>
+            <p>A Turtle</p>
+            <p>The Beatles</p>
+            <p>The Beatle</p>
+            <p>Super Mario</p>
+            <p>A French Person</p>
+            <p>An Entire Fire Dept</p>
+            <p>Fifty Men</p>
+            <p>A Bear in the Woods</p>
+            <p>A Shark</p>
+            <p>A Whale</p>
+            <p>Three Lumberjacks</p>
+            <p>Popeye</p>
+            <p>Otis the Cow</p>
+            <p>A Mall Cop</p>
+            <p>Albert Einstein</p>
+            <p>George Washington</p>
+            <p>Queen Elizabeth I</p>
+            <p>Napoleon</p>
+            <p>A Rat King</p>
+            <p>A Dragon</p>
+            <p>Santa Claus</p>
+            <p>Mr. Bean</p>
+            <p>Elon Musk</p>
+            <p>John Cena</p>
+            <p>The Knights of the Round Table</p>
+            <p>Five Allied Ant Colonies</p>
+            <p>A Huntsman Spider</p>
+            <p>St. Peter</p>
+            <p>Jesus Christ</p>
+            <p>Superman</p>
+            <p>Spiderman</p>
+            <p>Batman</p>
+            <p>The Joker</p>
+            <p>Captain Blackbeard</p>
+            <p>Bowser</p>
+            <p>Morgan Freeman</p>
+            <p>A Biker Gang</p>
+            <p>A Militia of Minutemen</p>
+            <p>A Senior Bowling Team</p>
+            <p>A Middle School Church Choir</p>
+            <p>Your High School Football Team</p>
+            <p>A Marching Band</p>
+            <p>The IT Department</p>
+            <p>The Oldest Person in the Group</p>
+            <p>A Clone of the Other Fighter</p>
+            <p>A Forklift Operator</p>
+            <p>A Pickup-Truck from the Cars Universe</p>
+            <p>Plankton</p>
+            <p>Spongebob Squarepants</p>
+            <p>Two Gym Bros</p>
+            <p>A Little League Baseball Team</p>
+            <p>Your Parents</p>
+            <p>An Alchemist</p>
+            <p>An Alien</p>
+            <p>A Family of Rednecks</p>
+            <p>A Mummy</p>
+            <p>Satan</p>
+            <p>The Buddha</p>
+            <p>A Kindergarten Class</p>
+            <p>The Pope</p>
+            <p>An Elephant</p>
+            <p>A Pack of Wolves</p>
+            <p>The Three Little Pigs</p>
+            <p>A Horse</p>
+            <p>The Headless Horseman</p>
+            <p>A Pond of Frogs</p>
+            <p>A Drunk Driver</p>
+            <p>A Train Operator</p>
+            <p>Harry Styles</p>
+            <p>The Coachella Lineup</p>
+            <p>Sonic the Hedgehog</p>
+            <p>Master Chief</p>
+            <p>Doom Guy</p>
+            <p>A Doomsday Prepper</p>
+            <p>Darth Vader</p>
+            <p>A Dinosaur</p>
+            <p>A Black Cat</p>
+            <p>An Orange Cat</p>
+            <p>The Mystery Gang</p>
+            <p>A Reanimated Graveyard</p>
+            <p>The Wright Brothers</p>
+            <p>A Delta Airlines Pilot</p>
+            <p>Davy Jones</p>
+            <p>A Farmer and His Livestock</p>
+            <p>A Teddy Bear</p>
+            <p>Justin Bieber</p>
+            <p>A Boy Scout</p>
+            <p>A Girl Scout</p>
+            <p>A Secret Agent</p>
+            <p>Iron Man</p>
+            <p>Megamind</p>
+            <p>A Crab</p>
+            <p>Sans Undertale</p>
+            <p>Freddy Fazbear</p>
+            <p>Mr. Beast</p>
+            <p>A Lobster</p>
+            <p>An Orca Whale</p>
+            <p>A Robot</p>
+            <p>Link</p>
+            <p>Hatsune Miku</p>
+            <p>Kasane Teto</p>
+            <p>Genghis Khan</p>
+            <p>A Tiger</p>
+            <p>An Alligator</p>
+            <p>A Crocodile</p>
+            <p>An Elf</p>
+            <p>An Ogre</p>
+            <p>A Dolphin</p>
+            <p>A Lion</p>
+            <p>A Flock of Crows</p>
+            <p>A Pikachu</p>
+        </details>
+        <details id="f-attr">
+            <summary>All Fighter Attributes</summary>
+            <p>Gay</p>
+            <p>Goes through walls</p>
+            <p>Shoots lasers</p>
+            <p>Morbidly obese</p>
+            <p>Practicer of necromancy</p>
+            <p>Ten times as strong</p>
+            <p>Flies, but only 10ft in the air</p>
+            <p>Can turn into a werewolf</p>
+            <p>Drank seven Monster Energy Drinks</p>
+            <p>Doused in pig blood</p>
+            <p>Has diarrhea</p>
+            <p>Hands are octopus tentacles</p>
+            <p>Two of them</p>
+            <p>Owns Google</p>
+            <p>Owns Bing</p>
+            <p>Wearing impenetrable suits</p>
+            <p>Flying</p>
+            <p>Doesn't need to breathe</p>
+            <p>Breathes fire</p>
+            <p>Venemous Bite</p>
+            <p>Poisonous</p>
+            <p>Ppring legs</p>
+            <p>Has a nest of bees</p>
+            <p>Is a car</p>
+            <p>In labor</p>
+            <p>Good credit score</p>
+            <p>Furry</p>
+            <p>Made of cheese</p>
+            <p>AI-generated</p>
+            <p>Needs to go pee really bad</p>
+            <p>Is above 100℃</p>
+            <p>On fire. (immune to it.)</p>
+            <p>Boston accent</p>
+            <p>Made of concrete</p>
+            <p>Has the flu</p>
+            <p>Kills with a kiss</p>
+            <p>Summons an army of internet trolls</p>
+            <p>Possessed by a demon</p>
+            <p>Strapped with dynamite</p>
+            <p>Explodes in 2 minutes</p>
+            <p>Emits a blinding light</p>
+            <p>Blows 200 MPH winds</p>
+            <p>Survives one lethal injury</p>
+            <p>9ft tall</p>
+            <p>2in tall</p>
+            <p>Running with scissors</p>
+            <p>1000 years old</p>
+            <p>Walking twelve wiener dogs</p>
+            <p>Invisible</p>
+            <p>Allergic to all animals</p>
+            <p>Armed with an inpenetrable shield</p>
+            <p>Really into fonts</p>
+            <p>Radioactive</p>
+            <p>Armed with holy hand grenades</p>
+            <p>Really really stupid</p>
+            <p>Run 200 MPH, but only in a straight line</p>
+            <p>Can bunnyhop</p>
+            <p>Throw burritos</p>
+            <p>Has a pet T-Rex</p>
+            <p>Riding a war elephant</p>
+            <p>Can split into two half-size clones. Can be repeated</p>
+            <p>On a unicycle</p>
+            <p>Carrying a baby</p>
+            <p>In a space suit</p>
+            <p>Electrically conductive</p>
+            <p>100 stories high</p>
+            <p>On a giant paper airplane</p>
+            <p>Armed with a bacon bat</p>
+            <p>Buttery hands</p>
+            <p>Summon anything from a hardware store</p>
+            <p>Completed a magical girl transformation</p>
+            <p>Stop time while holding breath</p>
+            <p>In a fitted hampster wheel</p>
+            <p>Wall-crawler</p>
+            <p>Wearing a cone of shame</p>
+            <p>Leader of a valkrie army</p>
+            <p>Has Pandora's Box</p>
+            <p>Has the Triforce</p>
+            <p>Really mad</p>
+            <p>Really sad</p>
+            <p>Really glad</p>
+            <p>Turns invisible while singing</p>
+            <p>Can see more colors than humans</p>
+            <p>Has a jetpack</p>
+            <p>Has a flamethrower</p>
+            <p>Throws cats</p>
+            <p>Is beautiful</p>
+            <p>Is ugly</p>
+            <p>Copies an attribute of the opponent</p>
+            <p>Axe murderer</p>
+            <p>Armed with bayonettes</p>
+            <p>Has a hostage</p>
+            <p>Armed with a sniper rifle</p>
+            <p>Can't stob crying</p>
+            <p>Is a hoarder</p>
+            <p>Crab legs</p>
+            <p>Brain uploaded to a computer</p>
+            <p>No bones</p>
+            <p>Armed with poison-tipped arrows</p>
+            <p>Touch of Midas</p>
+            <p>Can't count higher than ten</p>
+            <p>Bad memory</p>
+            <p>Teeth of tungsten</p>
+            <p>Armed with a katana</p>
+            <p>Can jump 10ft</p>
+            <p>Low gravity</p>
+            <p>Cannot leave the ground</p>
+            <p>Pulled the sword from the stone</p>
+            <p>Blind</p>
+            <p>Deaf</p>
+            <p>Speaks 100x louder than normal</p>
+            <p>Is part of a hivemind of ducks</p>
+            <p>Has a nest of bees</p>
+            <p>Convicted of a felony</p>
+            <p>Can see in the dark</p>
+            <p>Can cast Fireball</p>
+            <p>Always aura-farming</p>
+            <p>Highly-trained in rapier fencing</p>
+            <p>Only has 1 leg</p>
+            <p>Always singing a sea shanty</p>
+        </details>
+        <details id="arena">
+            <summary>All Arenas</summary>
+            <p>Hell</p>
+            <p>China</p>
+            <p>The Mormon Garden of Eden</p>
+            <p>Fazbear's Family Diner</p>
+            <p>Luigi's Mansion</p>
+            <p>The Mushroom Kingdom</p>
+            <p>Hyrule Kingdom</p>
+            <p>Normandy Beach</p>
+            <p>Kanto</p>
+            <p>The Top of a Mountain</p>
+            <p>An Underwater Cave</p>
+            <p>The Beach</p>
+            <p>Heaven</p>
+            <p>Hawaii</p>
+            <p>Foot of a Volcano</p>
+            <p>MIT</p>
+            <p>A UFC Cage Match</p>
+            <p>The MMA Octagon</p>
+            <p>Black Mesa Research Facility</p>
+            <p>A Casino</p>
+            <p>Las Vegas</p>
+            <p>The Top of the Eiffel Tower</p>
+            <p>A WWI Trench</p>
+            <p>A Tropical Rainforest</p>
+            <p>The Turnpike</p>
+            <p>A Chuck-E-Cheese</p>
+            <p>A McDonald's Playplace</p>
+            <p>A Playground</p>
+            <p>A Suburban Sewage System</p>
+            <p>The New York Subway</p>
+            <p>The Back of a Coal Train</p>
+            <p>The Titanic</p>
+            <p>Mount Olympus</p>
+            <p>A River</p>
+            <p>A Bridge</p>
+            <p>A Skyscraper</p>
+            <p>A Suburban Home</p>
+            <p>The River Styx</p>
+            <p>Walmart</p>
+            <p>Endless Ikea</p>
+            <p>Shakespeare's Globe</p>
+            <p>The Amish Paradise</p>
+            <p>The Sahara Desert</p>
+            <p>The Moon</p>
+            <p>A Tomb</p>
+        </details>
+        <details id="a-attr">
+            <summary>All Arena Attributes</summary>
+            <p>In war</p>
+            <p>On fire</p>
+            <p>The floor is lava</p>
+            <p>Flooded</p>
+            <p>There is a parade</p>
+            <p>Raining cats and dogs</p>
+            <p>Televised on MTV</p>
+            <p>Is 100ft x 100ft in area</p>
+            <p>Someone is playing music really loudly</p>
+            <p>Snowing</p>
+            <p>Pitch-black</p>
+            <p>In 1686 CE</p>
+            <p>Zombie Apocolypse</p>
+            <p>Zombie Apocolypse</p>
+        </details>
+    </section>
+    <section>
+        <script>
+            console.log('fighter',document.getElementById('fighter').getElementsByTagName('p').length);
+            console.log('f-attr',document.getElementById('f-attr').getElementsByTagName('p').length);
+            console.log('arena',document.getElementById('arena').getElementsByTagName('p').length);
+            console.log('a-attr',document.getElementById('a-attr').getElementsByTagName('p').length);
+        </script>
+    </section>
+</body>
+</html>

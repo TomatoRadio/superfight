@@ -1,0 +1,182 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+@font-face {
+    font-family: 'Roboto';
+    src: url('assets/Roboto-VariableFont_wdth\,wght.ttf');
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Roboto';
+    src: url('assets/Roboto-Italic-VariableFont_wdth\,wght.ttf');
+    font-style: italic;
+}
+@font-face {
+    font-family: 'Material Icons';
+    src: url('assets/MaterialIconsRound-Regular.otf');
+    font-style: normal;
+}
+
+html {
+    background-image: url('assets/bg.svg');
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    color: white;
+    text-shadow: 0.1em 0.1em 0em black;
+    width: 100%;
+    min-height: 100vh;
+    max-width: 1440px;
+    justify-self: center;
+    padding: 1em;
+}
+
+header {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 3em;
+}
+
+.title-icon {
+    font-family: 'Material Icons';
+    font-style: normal;
+    font-weight: normal;
+}
+
+hr {
+    border: 0.1em solid white;
+    border-radius: 1em;
+    box-shadow: 0.1em 0.1em 0em black;
+}
+
+section {
+    display: flex;
+    flex-flow: row wrap balance;
+    justify-content: space-around;
+    align-items: center;
+    padding: 1em;
+}
+
+fieldset {
+    border: none;
+    border-radius: 1em;
+    background-color: #333;
+    padding: 1em;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: left;
+    gap: 1em;
+    transition: all 0.5s ease-in;
+}
+
+legend {
+    padding: 0.1em 1em;
+    margin: 0em 1em;
+    background-color: #333;
+    border-radius: 1em;
+    font-weight: bold;
+    font-style: italic;
+}
+
+.card-list {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: left;
+    gap: 1em;
+}
+
+.card {
+    display: flex;
+    flex-flow: column;
+    justify-content: space-between;
+    padding: 1em;
+    border-radius: 1em;
+    text-shadow: none;
+    height: 12em;
+    width: 10em;
+    box-shadow: 0.1em 0.1em 1em black;
+    transition: all 0.2s ease-out;
+}
+
+.card:hover {
+    transform: scale(1.25);
+}
+
+.white {
+    background-color: white;
+    color: black;
+    font-weight: bold;
+}
+
+.black {
+    background-color: black;
+    color: white;
+}
+
+.gray {
+    background-color: #333;
+    color: white;
+    justify-content: center;
+    justify-items: center;
+    justify-self: center;
+}
+
+.card h1 {
+    text-decoration: underline;
+    font-size: 1.2em;
+}
+
+.controls {
+    display: flex;
+    flex-flow: row wrap;
+    gap: 0.25em;
+    font-family: 'Material Icons';
+}
+
+button {
+    padding: 0.1em;
+    background-color: rgba(128,128,128,0);
+    border: none;
+    border-radius: 5em;
+    transition: all 0.25s linear;
+    font-family: 'Material Icons';
+    font-size: 1.5em;
+    color: inherit;
+}
+
+button:hover {
+    background-color: rgba(128,128,128,0.5);
+}
+
+a {
+    color: lightblue;
+}
+a:hover {
+    color: skyblue;
+}
+a:active {
+    color: aquamarine;
+}
+
+img {
+    box-shadow: 0.1em 0.1em 0em black;
+}
+
+details {
+    width: 15em;
+    background-color: #333;
+    padding: 1em;
+    border-radius: 1em;
+}
+
+summary {
+    padding: 0em 1em;
+    border-bottom: 0.1em solid white;
+}
+
+details > p::before {
+    content: '• ';
+}
